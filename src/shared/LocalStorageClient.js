@@ -1,4 +1,5 @@
 import { storage } from '@core/utils';
+import { throttle } from '@core/utils';
 
 function storageName(param) {
   return 'excel:' + param;
@@ -7,6 +8,8 @@ function storageName(param) {
 export class LocalStorageClient {
   constructor(name) {
     this.name = storageName(name);
+
+    this.save = throttle(this.save, 300);
   }
 
   save(state) {

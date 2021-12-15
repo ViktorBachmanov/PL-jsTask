@@ -57,3 +57,19 @@ export function clone(obj) {
 export function preventDefault(event) {
   event.preventDefault();
 }
+
+export function throttle(fn, wait) {
+  let prevTime, currentTime;
+
+  return function(...args) {
+    currentTime = Date.now();
+
+    let diff = currentTime - prevTime;
+    //console.log(diff);
+    if( (prevTime === undefined) || (diff > wait) ) {
+      fn.apply(this, args);  
+
+      prevTime = currentTime;
+    }
+  }
+}
