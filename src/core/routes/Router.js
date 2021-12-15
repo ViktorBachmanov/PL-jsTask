@@ -15,6 +15,10 @@ export class Router {
 
     this.page = null;
 
+    // Привязываем обработчик к данному классу, чтобы в момент вызова обработчика
+    // this внутри его указывал на объект данного класса, а не на целевой элемент
+    this.changePageHandler = this.changePageHandler.bind(this);
+
     this.init();
   }
 
