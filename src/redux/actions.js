@@ -1,4 +1,4 @@
-import { CHANGE_TEXT, CHANGE_STYLES, APPLY_STYLE, CHANGE_TITLE, UPDATE_DATE } from './types';
+import { CHANGE_TEXT, CHANGE_STYLES, APPLY_STYLE, CHANGE_TITLE, UPDATE_DATE, TABLE_RESIZE } from './types';
 // Action Creator
 
 // TODO: 2. Добавьте action creator (action creator - это ф-ция, создающая действие) tableResize для изменения стилей.
@@ -6,6 +6,13 @@ import { CHANGE_TEXT, CHANGE_STYLES, APPLY_STYLE, CHANGE_TITLE, UPDATE_DATE } fr
 // Нужно диспатчить action creator для TABLE_RESIZE, когда вызывается ф-ция ресайза колонки или строки (найдите эту ф-цию).
 // tableResize принимает объект типа {value: 63, type: 'row', id: '6'}
 // В reducer уже есть закомментированные наброски обработки этого действия, проверьте корректность сохранения размера при ресайзе, если обновить страницу.
+
+export function tableResize(data) {
+  return {
+    type: TABLE_RESIZE,
+    data,
+  };
+}
 
 export function changeText(data) {
   return {
