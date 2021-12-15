@@ -33,6 +33,15 @@ export function createToolbar(s) {
       icon: 'format_align_right',
       active: s['textAlign'] === 'right',
     },
+
+    {
+      value: {
+        fontWeight: s['fontWeight'] === 'bold' ? 'normal' : 'bold',
+      },
+      icon: 'format_bold',
+      active: s['fontWeight'] === 'bold',
+    },
+
     {
       value: {
         textDecoration: s['textDecoration'] === 'underline' ? 'none' : 'underline',
