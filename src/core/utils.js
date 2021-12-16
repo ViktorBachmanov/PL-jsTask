@@ -68,8 +68,7 @@ export function throttle(fn, wait) {
     //console.log(diff);
     if( (prevTime === undefined) || (diff > wait) ) {
       fn.apply(this, args);  
-
-      prevTime = currentTime;
     }
+    prevTime = currentTime;
   }
 }
