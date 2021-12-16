@@ -33,7 +33,7 @@ export function createToolbar(s) {
       icon: 'format_align_right',
       active: s['textAlign'] === 'right',
     },
-
+    // Добавляем кнопку B для изменения стиля font-weight на bold / normal
     {
       value: {
         fontWeight: s['fontWeight'] === 'bold' ? 'normal' : 'bold',
