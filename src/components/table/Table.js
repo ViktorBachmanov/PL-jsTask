@@ -63,6 +63,8 @@ export class Table extends ExcelComponent {
     try {
       const data = await resizeHandler(this.$root, event);
 
+      // Диспатчим действие ресайза колонки или строки
+      // с дополнительной информацией типа {value: 63, type: 'row', id: '6'}
       this.$dispatch(actions.tableResize(data));
 
     } catch (e) {
