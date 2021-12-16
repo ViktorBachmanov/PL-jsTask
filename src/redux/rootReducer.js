@@ -11,6 +11,10 @@ export function rootReducer(state, action) {
       // TODO: 4. Опишите здесь как изменяется состояние при вызове действия типа CHANGE_TEXT.
       // При вызове CHANGE_TEXT мы хотим записать данные в объект dataState по ключу id'шнику ячейки
       // А также сохранить новое значение текста в currentText
+
+      // Здесь Reducer реагирует на действие типа CHANGE_TEXT, диспетчируемое из Table.updateTextInStore()
+      // по событию onInput. Объект action содержит дополнительные данные: id ячейки и текст.
+      // Reducer возвращает новый state с измененными полями dataState и currentText
       field = 'dataState';
       return { ...state, [field]: value(state, field, action), currentText: action.data.value };
     case CHANGE_STYLES:
