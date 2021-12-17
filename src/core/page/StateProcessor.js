@@ -1,4 +1,4 @@
-import { throttle } from '@core/utils';
+import { debounce } from '@core/utils';
 
 
 export class StateProcessor {
@@ -8,7 +8,7 @@ export class StateProcessor {
 
     // Сохраняем в localStorage только после 300 мс с момента
     // последнего изменения state
-    this.listen = throttle(this.listen, 300);
+    this.listen = debounce(this.listen, 300);
   }
 
   listen(state) {

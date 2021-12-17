@@ -57,7 +57,7 @@ export function clone(obj) {
 export function preventDefault(event) {
   event.preventDefault();
 }
-
+/*
 export function throttle(fn, wait) {
   let prevTime, currentTime;
 
@@ -71,4 +71,4 @@ export function throttle(fn, wait) {
     }
     prevTime = currentTime;
   }
-}
+}*/
